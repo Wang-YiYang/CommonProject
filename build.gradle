@@ -1,10 +1,12 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
+    ext.kotlin_version = '1.2.71'
     ext.kotlin_version = '1.2.61'
     repositories {
         google()
         jcenter()
+        maven { url "https://dl.bintray.com/yiang/maven" }//审核前可使用
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
@@ -16,13 +18,17 @@ buildscript {
     }
 }
 
+
 allprojects {
     repositories {
         google()
         jcenter()
+        maven { url "https://dl.bintray.com/yiang/maven" }//审核前可使用
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+tasks.getByPath(":common:javadoc").enabled = false

@@ -1,4 +1,4 @@
-package com.yiang.common;
+package me.yiang.common;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -6,6 +6,8 @@ import android.support.test.runner.AndroidJUnit4;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import me.yiang.common.utils.MediaUtil;
 
 import static org.junit.Assert.*;
 
@@ -23,4 +25,11 @@ public class ExampleInstrumentedTest {
 
         assertEquals("com.yiang.common.test", appContext.getPackageName());
     }
+
+    @Test
+    public void testgetLocalMediaAudio() {
+        Context context =  InstrumentationRegistry.getContext();
+        MediaUtil.getLoacalMediaAudioList(context);
+    }
+
 }
